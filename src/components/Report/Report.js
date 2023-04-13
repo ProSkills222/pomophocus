@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Modal from "../Modal";
+import Modal from "../Modal/Modal";
 import Summary from "./Summary";
 import Detail from "./Detail";
 import { TabBar, Tab } from "./common";

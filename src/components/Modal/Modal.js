@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useEffect, useRef } from "react";
 import { useHistory } from "react-router";
-import Icon from "./Icon";
+import Icon from "../Icon/Icon";
 import classes from "./Modal.module.css";
 
 export default function Modal({ children, className }) {

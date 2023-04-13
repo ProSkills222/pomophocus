@@ -1,11 +1,11 @@
 /* eslint-disable no-restricted-globals */
 import { useCallback, useEffect } from "react";
 import clsx from "clsx";
-import Icon from "./Icon";
-import Progress from "./Progress";
+import Icon from "../Icon/Icon";
+import Progress from "../Progress/Progress";
 import classes from "./Timer.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { incrementRound, setMode } from "../redux/timerSlice";
+import { incrementRound, setMode } from "../../redux/timerSlice";
 import {
   CONFIRM,
   LONG_BREAK,
@@ -15,10 +15,10 @@ import {
   STOP,
   TIME_FOR_A_BREAK,
   TIME_TO_FOCUS,
-} from "../constants";
-import { updateFavicon, updateTitle, formatTime } from "../helpers";
-import useCountdown from "../useCountdown";
-import { player } from "../util";
+} from "../../constants";
+import { updateFavicon, updateTitle, formatTime } from "../../helpers";
+import useCountdown from "../../useCountdown";
+import { player } from "../../util";
 
 const buttonSound = player({
   asset: "sounds/button-press.wav",

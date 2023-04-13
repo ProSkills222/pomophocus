@@ -1,11 +1,11 @@
 import clsx from "clsx";
 import { useHistory } from "react-router";
-import Input from "./Input";
-import Modal from "./Modal";
-import Select from "./Select";
-import Slider from "./Slider";
-import Switch from "./Switch";
-import Button from "./Button";
+import Input from "../Input/Input";
+import Modal from "../Modal/Modal";
+import Select from "../Select/Select";
+import Slider from "../Slider/Slider";
+import Switch from "../Switch/Switch";
+import Button from "../Button/Button";
 import classes from "./Settings.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -18,14 +18,14 @@ import {
   toggleAutoBreaks,
   toggleAutoPomodoros,
   updateModeTime,
-} from "../redux/timerSlice";
+} from "../../redux/timerSlice";
 import {
   BELL_SOUND,
   DIGITAL_SOUND,
   FAST_TICKING,
   NO_SOUND,
   SLOW_TICKING,
-} from "../constants";
+} from "../../constants";
 
 const alarmSounds = [
   {

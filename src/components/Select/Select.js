@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { useCallback, useRef, useState, useEffect } from "react";
-import Icon from "./Icon";
+import Icon from "../Icon/Icon";
 import classes from "./Select.module.css";
 
 const Item = ({ children, selected, onClick }) => (

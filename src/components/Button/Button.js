@@ -1,4 +1,4 @@
-import Icon from "./Icon";
+import Icon from "../Icon/Icon";
 import classes from "./Button.module.css";
 
 const Button = ({ children, onClick, icon }) => (

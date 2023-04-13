@@ -4,9 +4,9 @@ import { Provider } from "react-redux";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import Settings from "./components/Settings";
+import Settings from "./components/Settings/Settings";
 import Report from "./components/Report";
-import EmailLogin from "./components/EmailLogin";
+import EmailLogin from "./components/EmailLogin/EmailLogin";
 import store from "./redux/store";
 
 function Main() {

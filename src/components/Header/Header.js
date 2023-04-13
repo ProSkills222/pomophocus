@@ -1,11 +1,11 @@
 import { useCallback } from "react";
 import { Link } from "react-router-dom";
-import Logo from "./Logo";
-import Icon from "./Icon";
+import Logo from "../Logo/Logo";
+import Icon from "../Icon/Icon";
 import classes from "./Header.module.css";
-import Menu, { MenuItem } from "./Menu";
-import GoogleLogo from "../assets/google-black.png";
-import EmailLogo from "../assets/envelope-black.png";
+import Menu, { MenuItem } from "../Menu/Menu";
+import GoogleLogo from "../../assets/google-black.png";
+import EmailLogo from "../../assets/envelope-black.png";
 
 function Button({ icon, children, onClick }) {
   return (

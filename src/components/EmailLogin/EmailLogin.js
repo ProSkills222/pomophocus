@@ -1,7 +1,7 @@
-import Modal from "./Modal";
-import Input from "./Input";
+import Modal from "../Modal/Modal";
+import Input from "../Input/Input";
 import classes from "./EmailLogin.module.css";
-import Button from "./Button";
+import Button from "../Button/Button";
 
 export default function EmailLogin() {
   return (
