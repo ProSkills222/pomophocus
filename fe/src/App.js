@@ -13,6 +13,7 @@ function App() {
       <div className={classes.content}>
         <Timer />
       </div>
+      
     </div>
   );
 }
