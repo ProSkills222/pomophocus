@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Modal from "../Modal";
+import Modal from "../Modal/Modal";
 import Summary from "./Summary";
 import Detail from "./Detail";
 import { TabBar, Tab } from "./common";
@@ -16,10 +16,10 @@ const tabs = [
   },
 ];
 
-export default function Report() {
+export default function Report({ setIsOpen }) {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <Modal className={classes.modal}>
+    <Modal className={classes.modal} setIsOpen={setIsOpen}>
       <div className={classes.container}>
         <TabBar
           activeIndex={activeIndex}

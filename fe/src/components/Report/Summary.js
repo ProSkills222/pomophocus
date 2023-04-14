@@ -1,4 +1,4 @@
-import Icon from "../Icon";
+import Icon from "../Icon/Icon";
 import { Title, NoData } from "./common";
 import classes from "./index.module.css";
 
