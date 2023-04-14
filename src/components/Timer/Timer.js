@@ -31,7 +31,7 @@ const tickingAudio = player({
 
 const alarmAudio = player({});
 
-const SecondaryButton = ({ children, active, onClick }) => {
+const PomotypeButton = ({ children, active, onClick }) => {
   return (
     <button
       onClick={onClick}
@@ -196,14 +196,14 @@ export default function Timer() {
         <div className={classes.content}>
           <ul>
             {Object.values(modes).map(({ id, label }) => (
-              <SecondaryButton
+              <PomotypeButton
                 key={id}
                 active={id === mode}
                 id={id}
                 onClick={() => confirmJump(id)}
               >
                 {label}
-              </SecondaryButton>
+              </PomotypeButton>
             ))}
           </ul>
           <div className={classes.time}>{formatTime(timeLeft)}</div>

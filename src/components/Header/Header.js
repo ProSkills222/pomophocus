@@ -1,11 +1,11 @@
-import { useCallback } from "react";
-import { Link } from "react-router-dom";
+import { useState } from "react";
 import Logo from "../Logo/Logo";
 import Icon from "../Icon/Icon";
 import classes from "./Header.module.css";
-import Menu, { MenuItem } from "../Menu/Menu";
-import GoogleLogo from "../../assets/google-black.png";
-import EmailLogo from "../../assets/envelope-black.png";
+import EmailLogin from "../EmailLogin/EmailLogin";
+import Settings from "../Settings/Settings";
+import Report from "../Report";
+import EmailRegister from "../EmailRegister/EmailRegister";
 
 function Button({ icon, children, onClick }) {
   return (
@@ -17,41 +17,47 @@ function Button({ icon, children, onClick }) {
 }
 
 export default function Header() {
-  const renderMenuButton = useCallback(
-    (onClick) => (
-      <Button icon="account_circle" onClick={onClick}>
-        Login
-      </Button>
-    ),
-    []
-  );
-  const loginWithGoogle = useCallback(() => console.log("Google"), []);
-
+  const [showLogin, setShowLogin] = useState(false);
+  const [showReport, setShowReport] = useState(false);
+  const [showSetting, setShowSetting] = useState(false);
+  const [showRegister, setShowRegister] = useState(false);
   return (
     <header className={classes.container}>
       <div className={classes.content}>
         <Logo />
         <ul className={classes.nav}>
           <li>
-            <Link to="/report">
-              <Button icon="insert_chart_outlined">Report</Button>
-            </Link>
+            <Button
+              icon="insert_chart_outlined"
+              onClick={() => setShowReport(true)}
+            >
+              Report
+            </Button>
+            {showReport && <Report setIsOpen={setShowReport} />}
           </li>
           <li>
-            <Link to="/settings">
-              <Button icon="settings">Setting</Button>
-            </Link>
+            <Button icon="settings" onClick={() => setShowSetting(true)}>
+              Setting
+            </Button>
+            {showSetting && <Settings setIsOpen={setShowSetting} />}
           </li>
           <li>
-            <Menu menuButton={renderMenuButton}>
-              <MenuItem src={GoogleLogo} onClick={loginWithGoogle}>
-                Login with Google
-              </MenuItem>
-              <Link to="/login">
-                <MenuItem src={EmailLogo}>Login with Email</MenuItem>
-              </Link>
-            </Menu>
+            <Button icon="account_circle" onClick={() => setShowLogin(true)}>
+              Login
+            </Button>
+            {showLogin && (
+              <EmailLogin
+                setIsOpenLogin={setShowLogin}
+                setIsOpenRegister={setShowRegister}
+              />
+            )}
           </li>
+          {showRegister && (
+            <EmailRegister
+              setIsOpenRegister={setShowRegister}
+              setIsOpenLogin={setShowLogin}
+            />
+          )}
         </ul>
       </div>
     </header>

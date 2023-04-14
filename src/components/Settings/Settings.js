@@ -1,5 +1,4 @@
 import clsx from "clsx";
-import { useHistory } from "react-router";
 import Input from "../Input/Input";
 import Modal from "../Modal/Modal";
 import Select from "../Select/Select";
@@ -73,13 +72,7 @@ const Row = ({ children, right, margin }) => (
   </div>
 );
 
-export default function Settings() {
-  const history = useHistory();
-  const back = (e) => {
-    e.stopPropagation();
-    history.goBack();
-  };
-
+export default function Settings({ setIsOpen }) {
   const {
     modes,
     autoBreaks,
@@ -94,7 +87,7 @@ export default function Settings() {
   const dispatch = useDispatch();
 
   return (
-    <Modal>
+    <Modal setIsOpen={setIsOpen}>
       <div>
         <div className={classes.content}>
           <h2 className={classes.title}>Timer Settings</h2>
@@ -189,7 +182,7 @@ export default function Settings() {
         </div>
         <footer className={classes.footer}>
           <div>
-            <Button onClick={back}>OK</Button>
+            <Button onClick={() => setIsOpen(false)}>OK</Button>
           </div>
         </footer>
       </div>

@@ -16,10 +16,10 @@ const tabs = [
   },
 ];
 
-export default function Report() {
+export default function Report({ setIsOpen }) {
   const [activeIndex, setActiveIndex] = useState(0);
   return (
-    <Modal className={classes.modal}>
+    <Modal className={classes.modal} setIsOpen={setIsOpen}>
       <div className={classes.container}>
         <TabBar
           activeIndex={activeIndex}
