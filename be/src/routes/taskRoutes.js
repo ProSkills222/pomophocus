@@ -5,18 +5,37 @@ const taskControllers = require("../controllers/taskControllers");
 const router = express.Router();
 
 router.use(sessionControllers.sessionMiddleware);
-router.use(sessionControllers.valid);
 
-router.post("/createTask", taskControllers.createTask);
+router.post(
+  "/createTask",
+  sessionControllers.valid,
+  taskControllers.createTask
+);
 
-router.get("/getTask", taskControllers.getTask);
+router.get("/getTask", sessionControllers.valid, taskControllers.getTask);
 
-router.post("/updateTaskDescription", taskControllers.updateTaskDescription);
+router.post(
+  "/updateTaskDescription",
+  sessionControllers.valid,
+  taskControllers.updateTaskDescription
+);
 
-router.post("/updateTaskEstPomos", taskControllers.updateTaskEstPomos);
+router.post(
+  "/updateTaskEstPomos",
+  sessionControllers.valid,
+  taskControllers.updateTaskEstPomos
+);
 
-router.post("/updateTaskCurrPomos", taskControllers.updateTaskCurrPomos);
+router.post(
+  "/updateTaskCurrPomos",
+  sessionControllers.valid,
+  taskControllers.updateTaskCurrPomos
+);
 
-router.delete("/deleteTask", taskControllers.deleteTask);
+router.delete(
+  "/deleteTask",
+  sessionControllers.valid,
+  taskControllers.deleteTask
+);
 
 module.exports = router;

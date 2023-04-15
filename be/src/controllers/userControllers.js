@@ -24,9 +24,7 @@ const login = async (req, res) => {
   const isPassValid = await bcrypt.compare(password, user.password);
 
   if (!isPassValid) {
-    return res
-      .status(401)
-      .send({ message: "Invalid email address or password" });
+    return res.status(401).send({ message: "Invalid username or password" });
   }
 
   req.session.user = { username: user.username, name: user.name, id: user._id };
