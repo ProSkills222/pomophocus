@@ -21,7 +21,7 @@ export default function EmailRegister({ setIsOpenRegister, setIsOpenLogin }) {
         </div>
         <h2 className={classes["field-name"]}>Password</h2>
         <div className={classes.input}>
-          <Input />
+          <Input type="password" />
         </div>
         <div className={classes.button}>
           <Button>Register</Button>

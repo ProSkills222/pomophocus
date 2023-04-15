@@ -9,27 +9,30 @@ import Report from "./components/Report";
 import EmailLogin from "./components/EmailLogin/EmailLogin";
 import EmailRegister from "./components/EmailRegister/EmailRegister";
 import store from "./redux/store";
+import { AuthProvider } from "./context/AuthProvider";
 
 function Main() {
   return (
     <Provider store={store}>
-      <Router basename={process.env.PUBLIC_URL}>
-        <Route path="/">
-          <App />
-        </Route>
-        <Route path="/login">
-          <EmailLogin />
-        </Route>
-        <Route path="/register">
-          <EmailRegister />
-        </Route>
-        <Route path="/settings">
-          <Settings />
-        </Route>
-        <Route path="/report">
-          <Report />
-        </Route>
-      </Router>
+      <AuthProvider>
+        <Router basename={process.env.PUBLIC_URL}>
+          <Route path="/">
+            <App />
+          </Route>
+          <Route path="/login">
+            <EmailLogin />
+          </Route>
+          <Route path="/register">
+            <EmailRegister />
+          </Route>
+          <Route path="/settings">
+            <Settings />
+          </Route>
+          <Route path="/report">
+            <Report />
+          </Route>
+        </Router>
+      </AuthProvider>
     </Provider>
   );
 }
