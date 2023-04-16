@@ -3,6 +3,7 @@ import classes from "./App.module.css";
 import Timer from "./components/Timer/Timer";
 import { useSelector } from "react-redux";
 import clsx from "clsx";
+import TaskManagement from "./components/Task/TaskManagement";
 
 function App() {
   const mode = useSelector((state) => state.timer.mode);
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <div className={classes.content}>
         <Timer />
+        <TaskManagement></TaskManagement>
       </div>
       {/* <div className={classes.content}>
         <Timer />
