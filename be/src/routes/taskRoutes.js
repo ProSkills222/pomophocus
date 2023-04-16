@@ -14,19 +14,19 @@ router.post(
 
 router.get("/getTask", sessionControllers.valid, taskControllers.getTask);
 
-router.post(
+router.put(
   "/updateTaskDescription",
   sessionControllers.valid,
   taskControllers.updateTaskDescription
 );
 
-router.post(
+router.put(
   "/updateTaskEstPomos",
   sessionControllers.valid,
   taskControllers.updateTaskEstPomos
 );
 
-router.post(
+router.put(
   "/updateTaskCurrPomos",
   sessionControllers.valid,
   taskControllers.updateTaskCurrPomos
