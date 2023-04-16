@@ -27,7 +27,6 @@ export default function Header() {
   const [showRegister, setShowRegister] = useState(false);
   const { auth, setAuth } = useContext(AuthContext);
   const currUser = AuthService.getCurrentUser();
-  console.log({ showLogin, showLogout });
   return (
     <header className={classes.container}>
       <div className={classes.content}>
