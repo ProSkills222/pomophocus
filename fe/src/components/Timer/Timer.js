@@ -19,6 +19,8 @@ import {
 import { updateFavicon, updateTitle, formatTime } from "../../helpers";
 import useCountdown from "../../useCountdown";
 import { player } from "../../util";
+import { useContext } from "react";
+import AuthContext from "../../context/AuthProvider";
 
 const buttonSound = player({
   asset: "sounds/button-press.wav",
@@ -65,6 +67,7 @@ const NextButton = ({ onClick, className }) => (
 );
 
 export default function Timer() {
+  const { auth, setAuth } = useContext(AuthContext);
   const dispatch = useDispatch();
   const {
     mode,

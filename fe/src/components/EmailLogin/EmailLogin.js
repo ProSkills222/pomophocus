@@ -15,35 +15,36 @@ export default function EmailLogin({ setIsOpenLogin, setIsOpenRegister }) {
   const [errMsg, setErrMsg] = useState("");
 
   const { auth, setAuth } = useContext(AuthContext);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const response = await axios.post(
-        LOGIN_URL,
-        JSON.stringify({ username, password }),
-        {
-          headers: { "Content-Type": "application/json" },
+
+    const response = await axios
+      .post(LOGIN_URL, JSON.stringify({ username, password }), {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then(() => {
+        localStorage.setItem(
+          "user",
+          JSON.stringify({
+            username,
+          })
+        );
+
+        setAuth({ username });
+        setUsername("");
+        setPassword("");
+        setIsOpenLogin(false);
+      })
+      .catch((err) => {
+        console.log("error occurs");
+        if (!err?.response) {
+          setErrMsg("No Server Response");
+        } else {
+          setErrMsg(err.response.data.message);
         }
-      );
-
-      localStorage.setItem(
-        "user",
-        JSON.stringify({
-          username,
-        })
-      );
-
-      setAuth({ username });
-      setUsername("");
-      setPassword("");
-    } catch (err) {
-      if (!err?.response) {
-        setErrMsg("No Server Response");
-      } else {
-        setErrMsg(err.response.data.message);
-      }
-      errRef.current.focus();
-    }
+        errRef.current.focus();
+      });
   };
 
   return (
