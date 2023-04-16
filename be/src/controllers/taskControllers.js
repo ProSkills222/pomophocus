@@ -11,7 +11,7 @@ const createTask = async (req, res) => {
 
   const newTask = {
     user: userId,
-    descritpion: description,
+    description: description,
     estPomos: estPomos,
     currPomos: currPomos,
   };

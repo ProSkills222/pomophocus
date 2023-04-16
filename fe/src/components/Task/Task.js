@@ -8,13 +8,7 @@ const AddTaskButton = ({ children, active, onClick, color }) => (
 );
 
 const Task = () => {
-  return (
-    <div>
-      <div className={classes.container}>
-        <AddTaskButton className={classes.content}>Add Task</AddTaskButton>
-      </div>
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Task;
