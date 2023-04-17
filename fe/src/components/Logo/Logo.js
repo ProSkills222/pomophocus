@@ -7,7 +7,7 @@ export default function Logo() {
     <h1 className={classes.text}>
       <Link to="/" className={classes.link}>
         <img src={logo} alt="pomofocus-logo" className={classes.logo} />
-        Pomofocus
+        Pomophocus
       </Link>
     </h1>
   );
